@@ -11,9 +11,7 @@ let dotenv_action = function (dotenvFile) {
     
     const returnedMap = {};
     for (const key in dotenv.parsed) {
-        const value = dotenv.parsed[key];
-        const lowercase_key = key.toLocaleLowerCase()
-        returnedMap[lowercase_key] = value;
+        returnedMap[key] = dotenv.parsed[key];
     }
     return returnedMap;
 }
